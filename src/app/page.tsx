@@ -5,9 +5,6 @@ import LoadingSkeleton from "@/components/LoadingSkeleton";
 import { Blog } from "@/types";
 import { useEffect, useState } from "react";
 
-// const SERVER_URL = "https://intern-challenge-backend.onrender.com";
-const SERVER_URL = "http://localhost:3200";
-
 export default function Home() {
   const [blogData, setBlogData] = useState<Blog[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -15,7 +12,9 @@ export default function Home() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`${SERVER_URL}/blogs`);
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_SERVER_URL}/blogs`
+        );
         if (!response.ok) {
           throw new Error(`HTTP error! status: ${response.status}`);
         }

@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <>
       <div className="space-y-2 mt-8 text-center">
-        <h1 className="bg-gradient-to-r from-[#5344b2] via-[#6484f8] to-[#579df3] bg-clip-text text-transparent text-4xl font-extrabold tracking-tight lg:text-5xl lg:leading-[3.5rem]">
+        <h1 className="bg-gradient-to-r from-[#5344b2] via-[#6484f8] to-[#579df3] bg-clip-text text-transparent text-3xl md:text-4xl font-extrabold tracking-tight lg:text-5xl lg:leading-[3.5rem]">
           The Official OneSeven Blog
         </h1>
         <p className="text-[#0b0a38] lg:text-lg">

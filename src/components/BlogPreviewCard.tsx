@@ -16,11 +16,11 @@ export default function BlogPreviewCard({
   return (
     <div className="flex flex-col gap-2">
       <Link className="font-semibold" href={`/blog/${id}`}>
-        <h2 className="text-2xl font-bold tracking-tight hover:underline">
+        <h2 className="text-xl md:text-2xl font-bold tracking-tight hover:underline">
           {title}
         </h2>
       </Link>
-      <p className="text-justify">
+      <p className="text-justify text-sm md:text-base">
         {content.substring(0, maxContentCharacters)}
       </p>
       <Link

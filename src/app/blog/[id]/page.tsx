@@ -39,11 +39,15 @@ export default function BlogDetailedView({
           <span>Loading...</span>
         </div>
       ) : (
-        <div className="space-y-3 mt-4">
+        <div className="space-y-5 mt-4">
           <BackButton />
-          <div className="space-y-10">
-            <h1 className="text-5xl">{blogData.title}</h1>
-            <p className="text-justify lg:mx-10">{blogData.content}</p>
+          <div className="space-y-5 md:space-y-10">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl">
+              {blogData.title}
+            </h1>
+            <p className="text-justify mx-5 md:mx-10 lg:mx-16">
+              {blogData.content}
+            </p>
           </div>
         </div>
       )}

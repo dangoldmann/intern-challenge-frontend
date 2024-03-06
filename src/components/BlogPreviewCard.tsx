@@ -11,6 +11,8 @@ export default function BlogPreviewCard({
   title,
   content,
 }: BlogPreviewCardProps) {
+  const maxContentCharacters = 400;
+
   return (
     <div className="flex flex-col gap-2">
       <Link className="font-semibold" href={`/blog/${id}`}>
@@ -18,7 +20,9 @@ export default function BlogPreviewCard({
           {title}
         </h2>
       </Link>
-      <p>{content}</p>
+      <p className="text-justify">
+        {content.substring(0, maxContentCharacters)}
+      </p>
       <Link
         className="font-semibold underline hover:text-gray-900"
         href={`/blog/${id}`}

@@ -17,21 +17,26 @@ export default function WritePage() {
       return toast.error("Title and content are required");
 
     setSending(true);
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/blogs`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ title, content }),
-    });
+    try {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/blogs`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ title, content }),
+      });
 
-    setSending(false);
-    if (res.ok) {
+      if (!res.ok) {
+        throw new Error("Failed to create post");
+      }
+
       setTitle("");
       setContent("");
       toast.success("Post created successfully!");
-    } else {
-      toast.error("Failed to create post");
+    } catch (error: any) {
+      toast.error(error.message);
+    } finally {
+      setSending(false);
     }
   };
 

@@ -20,7 +20,7 @@ export default function BlogPreviewCard({
       </Link>
       <p>{content}</p>
       <Link
-        className="font-semibold underline hover:text-gray-900 dark:hover:text-gray-100"
+        className="font-semibold underline hover:text-gray-900"
         href={`/blog/${id}`}
       >
         Read more

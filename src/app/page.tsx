@@ -1,8 +1,6 @@
 "use client";
 
 import BlogList from "@/components/BlogList";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
 import LoadingSkeleton from "@/components/LoadingSkeleton";
 import { Blog } from "@/types";
 import { useEffect, useState } from "react";
@@ -33,20 +31,16 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="bg-white text-gray-950">
-      <Header />
-      <main className="flex min-h-screen flex-col items-center">
-        <div className="space-y-2 mt-16">
-          <h1 className="bg-gradient-to-r from-[#5344b2] via-[#6484f8] to-[#579df3] bg-clip-text text-transparent text-4xl font-extrabold tracking-tight lg:text-5xl lg:leading-[3.5rem]">
-            The Official OneSeven Blog
-          </h1>
-          <p className="text-[#0b0a38] lg:text-lg">
-            The latest news, updates, and stories from the OneSeven team.
-          </p>
-        </div>
-        {isLoading ? <LoadingSkeleton /> : <BlogList blogs={blogData} />}
-      </main>
-      <Footer />
-    </div>
+    <>
+      <div className="space-y-2 mt-8 text-center">
+        <h1 className="bg-gradient-to-r from-[#5344b2] via-[#6484f8] to-[#579df3] bg-clip-text text-transparent text-4xl font-extrabold tracking-tight lg:text-5xl lg:leading-[3.5rem]">
+          The Official OneSeven Blog
+        </h1>
+        <p className="text-[#0b0a38] lg:text-lg">
+          The latest news, updates, and stories from the OneSeven team.
+        </p>
+      </div>
+      {isLoading ? <LoadingSkeleton /> : <BlogList blogs={blogData} />}
+    </>
   );
 }
